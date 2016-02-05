@@ -348,7 +348,8 @@
                                             "-c",
                                             "/opt/datagrid/bin/livenessProbe.sh"
                                         ]
-                                    }
+                                    },
+                                    "timeoutSeconds": 6000
                                 },
                                 "readinessProbe": {
                                     "exec": {
@@ -357,7 +358,8 @@
                                             "-c",
                                             "/opt/datagrid/bin/readinessProbe.sh"
                                         ]
-                                    }
+                                    },
+                                    "timeoutSeconds": 6000
                                 },
                                 "ports": [
                                     {
