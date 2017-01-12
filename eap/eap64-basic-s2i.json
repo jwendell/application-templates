@@ -179,7 +179,13 @@
                             "kind": "ImageStreamTag",
                             "namespace": "${IMAGE_STREAM_NAMESPACE}",
                             "name": "jboss-eap64-openshift:1.4"
-                        }
+                        },
+                        "env": [
+                                    {
+                                        "name": "MAVEN_MIRROR_URL",
+                                        "value": "http://ce-nexus.usersys.redhat.com/content/groups/public"
+                                    }
+                        ]
                     }
                 },
                 "output": {

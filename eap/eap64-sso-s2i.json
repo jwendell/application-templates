@@ -25,13 +25,13 @@
             "description": "Hostname for http service route (e.g. eap-app-myproject.example.com).  Required for SSO-enabled applications.  This is added to the white list of redirects in the SSO server.",
             "name": "HOSTNAME_HTTP",
             "value": "",
-            "required": true
+            "required": false
         },
         {
             "description": "Hostname for https service route (e.g. secure-eap-app-myproject.example.com).  Required for SSO-enabled applications.  This is added to the white list of redirects in the SSO server.",
             "name": "HOSTNAME_HTTPS",
             "value": "",
-            "required": true
+            "required": false
         },
         {
             "description": "Git source URI for application",
@@ -90,13 +90,13 @@
         {
             "description": "The name associated with the server certificate (e.g. jboss)",
             "name": "HTTPS_NAME",
-            "value": "",
+            "value": "jboss",
             "required": false
         },
         {
             "description": "The password for the keystore and certificate (e.g. mykeystorepass)",
             "name": "HTTPS_PASSWORD",
-            "value": "",
+            "value": "mykeystorepass",
             "required": false
         },
         {
@@ -166,8 +166,8 @@
         {
             "description": "The URL for the SSO server (e.g. https://secure-sso-myproject.example.com/auth).  This is the URL through which the user will be redirected when a login or token is required by the application.",
             "name": "SSO_URL",
-            "value": "",
-            "required": true
+            "value": "https://secure-sso:8443/auth",
+            "required": false
         },
         {
             "description": "The URL for the interal SSO service, where secure-sso is the kubernetes service exposed by the SSO server.  This is used to create the application client(s) (see SSO_USERNAME).  This can also be the same as SSO_URL.",
@@ -178,8 +178,8 @@
         {
             "description": "The SSO realm to which the application client(s) should be associated (e.g. demo).",
             "name": "SSO_REALM",
-            "value": "",
-            "required": true
+            "value": "demo",
+            "required": false
         },
         {
             "description": "The username used to access the SSO service.  This is used to create the appliction client(s) within the specified SSO realm. This should match the SSO_SERVICE_USERNAME specified through one of the sso70-* templates.",
@@ -416,6 +416,10 @@
                             {
                                 "name": "MAVEN_ARGS_APPEND",
                                 "value": ""
+                            },
+                            {
+                                "name": "MAVEN_MIRROR_URL",
+                                "value": "http://ce-nexus.usersys.redhat.com/content/groups/public"
                             }
                         ]
                     }

@@ -202,7 +202,13 @@
                                 "namespace": "${IMAGE_STREAM_NAMESPACE}",
                                 "name": "jboss-datagrid65-openshift:1.2"
                             }
-                        }
+                        },
+                        "env": [
+                                    {
+                                        "name": "MAVEN_MIRROR_URL",
+                                        "value": "http://ce-nexus.usersys.redhat.com/content/groups/public"
+                                    }
+                        ]
                     },
                     {
                         "type": "ConfigChange"
